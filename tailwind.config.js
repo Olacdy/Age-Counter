@@ -73,15 +73,6 @@ module.exports = {
       height: {
         screen: ['100vh', '100dvh'],
       },
-      fontSize: {
-        sm: '0.750rem',
-        base: '1rem',
-        xl: '1.333rem',
-        '2xl': '1.777rem',
-        '3xl': '2.369rem',
-        '4xl': '3.158rem',
-        '5xl': '4.210rem',
-      },
       fontFamily: {
         heading: 'Roboto',
         body: 'Roboto',
