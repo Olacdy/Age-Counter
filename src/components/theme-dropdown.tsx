@@ -15,7 +15,7 @@ import {
 import { Theme, useTheme } from '@/context/theme-context';
 import { cn } from '@/lib/utils';
 
-type ThemeDropdownProps = {} & HTMLAttributes<HTMLButtonElement>;
+type ThemeDropdownProps = HTMLAttributes<HTMLButtonElement>;
 
 const ThemeDropdown: FC<ThemeDropdownProps> = ({ className, ...props }) => {
   const { isDark, theme, changeTheme } = useTheme();

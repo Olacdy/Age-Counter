@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 
@@ -42,13 +40,23 @@ const BirthDateForm = () => {
     toast.success('Your birth date succesfully submitted.');
   };
 
-  useEffect(() => {
-    if (form.formState.errors.date) {
-      form.setError('day', { message: '' });
-      form.setError('month', { message: '' });
-      form.setError('year', { message: '' });
+  const isDateInvalid = () => {
+    const {
+      day: dayError,
+      month: monthError,
+      year: yearError,
+    } = form.formState.errors;
+
+    if (
+      dayError?.message === ' ' &&
+      monthError?.message === ' ' &&
+      yearError?.message === ' '
+    ) {
+      return 'Invalid date.';
     }
-  }, [form.formState.errors]);
+
+    return false;
+  };
 
   return (
     <section className='flex flex-col items-end w-full max-w-xs px-5 md:max-w-lg md:items-start md:gap-4'>
@@ -98,17 +106,15 @@ const BirthDateForm = () => {
             )}
           />
           <div className='flex items-end justify-between w-full pt-5 md:w-fit md:pt-0'>
-            {form.formState.errors.date && (
-              <FormMessage className='md:hidden'>
-                {form.formState.errors.date.message}
-              </FormMessage>
+            {isDateInvalid() && (
+              <FormMessage className='md:hidden'>{isDateInvalid()}</FormMessage>
             )}
             <Button type='submit'>Submit</Button>
           </div>
         </form>
-        {form.formState.errors.date && (
+        {isDateInvalid() && (
           <FormMessage className='hidden md:block'>
-            {form.formState.errors.date.message}
+            {isDateInvalid()}
           </FormMessage>
         )}
       </Form>

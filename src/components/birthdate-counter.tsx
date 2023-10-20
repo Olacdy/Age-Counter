@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import moment from 'moment';
 
@@ -17,9 +17,7 @@ import useBirthDateStore from '@/context/birthdate-context';
 import { Button } from '@/components/ui/button';
 import { calculateDifference } from '@/lib/utils';
 
-type BirthDateCounterProps = {};
-
-const BirthDateCounter: FC<BirthDateCounterProps> = ({}) => {
+const BirthDateCounter = () => {
   const { birthDate, clearBirthDate } = useBirthDateStore((state) => ({
     birthDate: moment(state.birthDate),
     clearBirthDate: state.clearBirthDate,
@@ -36,7 +34,7 @@ const BirthDateCounter: FC<BirthDateCounterProps> = ({}) => {
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [birthDate]);
 
   return (
     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
@@ -47,11 +45,10 @@ const BirthDateCounter: FC<BirthDateCounterProps> = ({}) => {
       </DialogTrigger>
       <DialogContent className='max-w-xs gap-10 sm:max-w-md md:max-w-lg'>
         <DialogHeader>
-          <DialogTitle className='text-left'>
-            Are you sure you want to clear your birth date?
-          </DialogTitle>
+          <DialogTitle className='text-left'>Are you sure?</DialogTitle>
           <DialogDescription className='text-left'>
-            This action cannot be undone.
+            To clear your current birth date and return to the input page, click
+            the &quot;Clear&quot; button.
           </DialogDescription>
         </DialogHeader>
         <DialogFooter className='flex-row justify-end gap-3'>
