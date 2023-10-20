@@ -52,7 +52,7 @@ These technologies work together to create a dynamic and visually appealing Age 
 
 ## Demo
 
-You can see a live demo of the Age Counter by visiting
+You can see a live demo of the Age Counter by visiting [https://olacdy.github.io/age-counter/](https://olacdy.github.io/age-counter/)
 
 ## Contributing
 
@@ -60,7 +60,7 @@ If you'd like to contribute to this project, feel free to fork the repository an
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the GPL License - see the [LICENSE](LICENSE) file for details.
 
 ## Author
 
