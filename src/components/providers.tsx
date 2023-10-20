@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import ThemeContextProvider from '@/context/theme-context';
+import { ThemeContextProvider } from '@/context/theme-context';
 
 type ProvidersProps = {
   children: React.ReactNode;
