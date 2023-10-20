@@ -19,7 +19,11 @@ import { calculateDifference } from '@/lib/utils';
 
 const BirthDateCounter = () => {
   const { birthDate, clearBirthDate } = useBirthDateStore((state) => ({
-    birthDate: moment(state.birthDate),
+    birthDate: moment({
+      year: state.birthDate?.year,
+      month: state.birthDate?.month! - 1,
+      day: state.birthDate?.day,
+    }),
     clearBirthDate: state.clearBirthDate,
   }));
 

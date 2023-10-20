@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 
@@ -19,7 +21,6 @@ import { Input } from '@/components/ui/input';
 import useBirthDateStore from '@/context/birthdate-context';
 
 import { birthDateSchema } from '@/schemas/birthdate-schema';
-import { useEffect } from 'react';
 
 const BirthDateForm = () => {
   const setBirthDate = useBirthDateStore((state) => state.setBirthDate);
@@ -36,7 +37,11 @@ const BirthDateForm = () => {
   const onSubmit = (values: z.infer<typeof birthDateSchema>) => {
     const { year, month, day } = values;
 
-    setBirthDate(`${year}-${month}-${day}`);
+    setBirthDate({
+      day: parseInt(day as string),
+      month: parseInt(month as string),
+      year: parseInt(year as string),
+    });
 
     toast.success('Your birth date succesfully submitted.');
   };
@@ -106,8 +111,10 @@ const BirthDateForm = () => {
           )}
         />
 
-        <div className='pt-5'>
-          <Button type='submit'>Submit</Button>
+        <div className='w-full pt-5 md:w-fit'>
+          <Button className='w-full md:w-fit' type='submit'>
+            Submit
+          </Button>
         </div>
       </form>
     </Form>

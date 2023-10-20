@@ -21,6 +21,7 @@
     "lucide-react": "^0.288.0",
     "moment": "^2.29.4",
     "react": "^18.2.0",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.47.0",
     "sonner": "^1.0.3",
