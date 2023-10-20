@@ -13,7 +13,7 @@ const App = () => {
       {birthDate ? (
         <>
           <BirthDateCounter />
-          <p className='absolute w-full text-xs text-center -translate-x-1/2 bottom-3 left-1/2 text-muted-foreground'>
+          <p className='absolute w-full text-xs text-center -translate-x-1/2 bottom-3 left-1/2 text-muted-foreground md:text-base lg:text-lg'>
             *click on number to clear birth date
           </p>
         </>

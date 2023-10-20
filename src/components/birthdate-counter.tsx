@@ -41,7 +41,9 @@ const BirthDateCounter: FC<BirthDateCounterProps> = ({}) => {
   return (
     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
       <DialogTrigger asChild>
-        <span className='p-4 cursor-pointer'>{currentAge}</span>
+        <span className='p-4 text-xl cursor-pointer sm:text-3xl md:text-5xl lg:text-7xl'>
+          {currentAge}
+        </span>
       </DialogTrigger>
       <DialogContent className='max-w-xs gap-10 sm:max-w-md md:max-w-lg'>
         <DialogHeader>
