@@ -15,12 +15,3 @@ export function calculateDifference(birthDate: Moment) {
 
   return `${yearDiff.toFixed(16)}`;
 }
-
-export function createISODateString(day: number, month: number, year: number) {
-  const formattedMonth = String(month).padStart(2, '0');
-  const formattedDay = String(day).padStart(2, '0');
-
-  const isoString = `${year}-${formattedMonth}-${formattedDay}T00:00:00.000Z`;
-
-  return isoString;
-}
