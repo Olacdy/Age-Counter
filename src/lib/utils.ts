@@ -13,5 +13,5 @@ export function calculateDifference(birthDate: Moment) {
 
   const yearDiff = current.diff(birthDate, 'years', true);
 
-  return `${yearDiff.toFixed(15)}`;
+  return `${yearDiff.toFixed(16)}`;
 }

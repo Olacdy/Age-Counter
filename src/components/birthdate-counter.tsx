@@ -39,7 +39,7 @@ const BirthDateCounter = () => {
   return (
     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
       <DialogTrigger asChild>
-        <span className='p-4 text-xl cursor-pointer sm:text-3xl md:text-5xl lg:text-7xl'>
+        <span className='cursor-pointer p-4 text-xl sm:text-3xl md:text-5xl lg:text-8xl'>
           {currentAge}
         </span>
       </DialogTrigger>
