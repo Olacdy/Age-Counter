@@ -93,28 +93,28 @@ h5 {
 
 html {
   font-size: 100%;
-} /* 16px */
+}
 
 h1 {
-  font-size: 4.21rem; /* 67.36px */
+  font-size: 4.21rem;
 }
 
 h2 {
-  font-size: 3.158rem; /* 50.56px */
+  font-size: 3.158rem;
 }
 
 h3 {
-  font-size: 2.369rem; /* 37.92px */
+  font-size: 2.369rem;
 }
 
 h4 {
-  font-size: 1.777rem; /* 28.48px */
+  font-size: 1.777rem;
 }
 
 h5 {
-  font-size: 1.333rem; /* 21.28px */
+  font-size: 1.333rem;
 }
 
 small {
-  font-size: 0.75rem; /* 12px */
+  font-size: 0.75rem;
 }
