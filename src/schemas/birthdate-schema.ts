@@ -1,5 +1,6 @@
 import z from 'zod';
 
+import { createISODateString } from '@/lib/utils';
 import moment from 'moment';
 
 export const birthDateSchema = z
@@ -34,7 +35,7 @@ export const birthDateSchema = z
     }
 
     if (!!day && !!month && !!year) {
-      const date = moment(`${year}-${month}-${day}`);
+      const date = moment(createISODateString(day, month, year));
 
       if (!date.isValid()) {
         ctx.addIssue({
